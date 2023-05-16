@@ -17,6 +17,17 @@ body {
     align-items: center;
 }
 
+header {
+    background-color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+
+    box-shadow: -6px -11px 25px 1px black;
+}
+
 .header-menu {
     display: flex;
 }
@@ -25,9 +36,13 @@ body {
     display: flex;
     align-items: center;
     gap: 8px;
+    margin-left: 8px;
 }
 
-.header-menu-button {}
+.icon-content-button {
+    display: flex;
+    gap: 8px;
+}
 
 .openHeaderMenuMoreBackground {
     background-color: rgba(0, 0, 0, 0.2);
@@ -61,6 +76,7 @@ body {
     border: none;
     border-radius: 10px;
     cursor: pointer;
+    font-size: x-large;
 }
 
 .icon-content-button button:hover {
@@ -91,6 +107,23 @@ body {
 
 .d-none {
     display: none;
+}
+
+.popupbtn {
+    color: white;
+    padding: 8px;
+    border: none;
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+.popupbtn img {
+    width: 32px;
+    height: 32px;
+}
+
+.popupbtn:hover {
+    background-color: #FF7F01;
 }
 
 /*--------------------------⇧ Header ⇧--------------------------------------------*/
