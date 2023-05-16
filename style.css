@@ -15,11 +15,35 @@ body {
     align-items: center;
 }
 
+.header-menu {
+    display: flex;
+}
+
 .header-logo {
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 8px;
+}
 
+.header-menu-button {
+    z-index: 999;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-menu-more-content {
+    background-color: #fefefe;
+    position: fixed;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    
 }
 
 /*--------------------------⇧ Header ⇧--------------------------------------------*/
@@ -31,7 +55,7 @@ body {
 
 
 
-/*------------------- Dropdown Button ----------------------------------*/
+/*-------------------  ⇩ Dropdown Button ⇩ ----------------------------------*/
 .dropbtn {
     color: white;
     padding: 8px;
@@ -89,4 +113,4 @@ body {
     background-color: #FF7F01;
 }
 
-/*----------------------------------------------------------------------*/
+/*--------------------⇧ Dropdown Button ⇧-------------------------------------------*/
