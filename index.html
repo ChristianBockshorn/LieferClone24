@@ -25,7 +25,7 @@
             <div class="header-menu">
                 <div class="header-menu-language-selector">
                     <div class="dropdown">
-                        <button class="dropbtn"><img src="icon/germany.png"></button>
+                        <button class="dropbtn" ><img src="icon/germany.png"></button>
                         <div class="dropdown-content">
                             <a href="#">Englisch</a>
                             <a href="#">Französisch</a>
@@ -35,11 +35,24 @@
                 </div>
                 <div class="header-menu-button">
                     <button class="dropbtn"><img src="icon/more.png" onclick="openHeaderMenuMore()"></button>
-                    <div id="openHeaderMenuMoreBackground" onclick="closeHeaderMenuMore()">
-                        <div class="header-menu-more-content">
-                            <a href="#">Englisch</a>
-                            <a href="#">Französisch</a>
-                            <a href="#">Russisch</a>
+                    <div id="openHeaderMenuMoreBackground" class="openHeaderMenuMoreBackground d-none" onclick="closeHeaderMenuMore()">
+                        <div class="icon-content-container" onclick="doNotClose(event)">
+                            <h1>Mein Account</h1>
+                            <div class="icon-content-button">
+                                <button>Anmelden</button>
+                                <button>Account erstellen</button>
+                            </div>
+
+                            <div class="icon-content-links">
+                                <a href="#"><img src="icon/bag.png">Bestellungen</a>
+                                <a href="#"><img src="icon/like.png">Favoriten</a>
+                                <a href="#"><img src="icon/points.png">Punkte</a>
+
+                                <a href="#"><img src="icon/bag.png">Bestellungen</a>
+                                <a href="#"><img src="icon/like.png">Favoriten</a>
+                                <a href="#"><img src="icon/points.png">Punkte</a>
+                            </div>
+
                         </div>
 
                     </div>
