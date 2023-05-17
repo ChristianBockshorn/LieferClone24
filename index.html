@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body onload="render()">
+<body class="flex-column" onload="render()">
     <header>
         <div class="header">
             <div class="header-logo">
@@ -25,7 +25,7 @@
             <div class="header-menu">
                 <div class="header-menu-language-selector">
                     <div class="dropdown">
-                        <button class="dropbtn" ><img src="icon/germany.png"></button>
+                        <button class="dropbtn"><img src="icon/germany.png"></button>
                         <div class="dropdown-content">
                             <a href="#">Englisch</a>
                             <a href="#">Französisch</a>
@@ -35,7 +35,8 @@
                 </div>
                 <div class="header-menu-button">
                     <button class="popupbtn"><img src="icon/more.png" onclick="openHeaderMenuMore()"></button>
-                    <div id="openHeaderMenuMoreBackground" class="openHeaderMenuMoreBackground d-none" onclick="closeHeaderMenuMore()">
+                    <div id="openHeaderMenuMoreBackground" class="openHeaderMenuMoreBackground d-none"
+                        onclick="closeHeaderMenuMore()">
                         <div class="icon-content-container" onclick="doNotClose(event)">
                             <h1>Mein Account</h1>
                             <div class="icon-content-button">
@@ -62,18 +63,29 @@
         </div>
     </header>
 
-    <div role="main">
-        <section>
+    <main class="main-container" role="main">
+        <div class="main-content-left">
+            <section>
+                <img src="img/foodTable.jpg">
+            </section>
+            <section></section>
+        </div>
 
-        </section>
+
 
         <aside>
+            <div>
+                <h2>Warenkorb</h2>
+            </div>
+
 
         </aside>
 
-    </div>
+    </main>
 
-    <footer></footer>
+    <footer>
+
+    </footer>
 
 </body>
 
