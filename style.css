@@ -24,7 +24,6 @@ flex-direction: column;
 
 header {
     background-color: white;
-    position: fixed;
     top: 0;
     left: 0;
     right: 0;
@@ -35,6 +34,7 @@ header {
 
 .header-menu {
     display: flex;
+    gap: 5px;
 }
 
 .header-logo {
@@ -217,13 +217,27 @@ header {
     display: flex;
     flex-direction: column;
     position: relative;
+    box-shadow: 5px 0 5px -5px #333;
 }
 
 
 .main-content-left img{
     width: 100%;
-    height: 32rem;
+    height: 16rem;
     object-fit: cover;
+}
+
+.main-info-container{
+    background-color: aqua;
+    height: 100px;
+    width: 100%;
+    position: relative;
+}
+
+.info-container-logo{
+    width: 7.2rem;
+    height: 7.2rem;
+    background-color: black;
 }
 
 
