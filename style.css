@@ -20,6 +20,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    
 }
 
 header {
@@ -28,7 +29,7 @@ header {
     left: 0;
     right: 0;
     height: 80px;
-
+    width: 100%;
     box-shadow: -6px -11px 25px 1px black;
 }
 
@@ -213,11 +214,12 @@ header {
 }
 
 .main-content-left {
-    width: 85%;
+    /* width: 85%; */
     display: flex;
     flex-direction: column;
     position: relative;
     box-shadow: 5px 0 5px -5px #333;
+    overflow: hidden;
 }
 
 
@@ -292,44 +294,45 @@ h2 {
     object-fit: contain;
 }
 
-.info-container-delivery-details{
+.info-container-delivery-details {
     display: flex;
     align-items: center;
     gap: 0.5rem;
     margin-left: 5rem;
     margin-top: 0.5rem;
-    
+
 
 }
 
-.info-container-delivery-details img{
+.info-container-delivery-details img {
     width: 1.2rem;
     height: 1.2rem;
     object-fit: contain;
 }
 
-.info-container-description{
+.info-container-description {
     margin-left: 5rem;
     margin-top: 0.5rem;
+    margin-right: 2.7rem;
 }
 
 .info-container-selection {
     margin-left: 5rem;
     margin-top: 2rem;
-    margin-right: 0.7rem;
+    margin-right: 3.7rem;
     overflow: auto;
-    column-gap: 48px;
+    column-gap: 24px;
     display: flex;
     align-items: center;
-    flex:1;
+    
     white-space: nowrap;
-    
-    
+
+
 
 
 }
 
-.info-container-selection img{
+.info-container-selection img {
     width: 1.8rem;
     height: 1.8rem;
     object-fit: contain;
@@ -338,30 +341,24 @@ h2 {
     padding: 7px;
 }
 
-.info-container-selection img:hover{
+
+
+.info-container-selection img:hover {
     background-color: #FF7F01;
 }
 
-.info-container-selection a{
+.info-container-selection a {
     text-decoration: none;
     color: black;
+    padding: 8px;
 }
 
-.info-container-selection a:hover{
+.info-container-selection a:hover {
     background-color: #FF7F01;
-    
     border-radius: 10px;
-    
 }
 
-aside {
-    width: 15%;
-    padding: 3rem;
-    box-shadow: -1px 0px 7px -2px var(--headerImgHover);
-    display: flex;
-    justify-content: center;
-    position: relative;
-}
+
 
 
 
@@ -369,22 +366,94 @@ aside {
 ::-webkit-scrollbar {
     width: 8px;
     background-color: #f5f5f5;
-  }
-  
-  /* Track */
-  ::-webkit-scrollbar-track {
+}
+
+
+/* Hintergrundfarbe der Leiste */
+::-webkit-scrollbar-track {
     background: white;
-  }
-  
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
+}
+
+/* Anfasser */
+::-webkit-scrollbar-thumb {
     background-color: #c0c0c0;
     border-radius: 15px;
     border: 4px solid #ffffff;
-  }
-  
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
+}
+
+/* Anfasser hover */
+::-webkit-scrollbar-thumb:hover {
     background-color: #808080;
-  }
+}
+
+.scrollArrow {
+    position: fixed;
+    right: 12.8rem;
+    z-index: 1;
+}
+
+.product-container{
+    margin-left: 5rem;
+    margin-top: 2rem;
+}
+
+
+
+
+
+
+
+
+
+
+aside {
+    
+    padding: 3rem;
+    box-shadow: -1px 0px 7px -2px var(--headerImgHover);
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
 /*-------------------- ⇧ Main ⇧ ----------------------------------------------*/
+
+
+
+
+
+/*-------------------  ⇩ footer ⇩ ----------------------------------------------*/
+
+.footer {
+    
+    width: 85%;
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 10px;
+    border: 1px solid rgb(213, 213, 213);
+    padding: 5px;
+    margin-left: 5rem;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    font-size: 14px;
+    gap: 20px;
+    
+}
+
+.footer a {
+    text-decoration: none;
+    color: grey;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+    color: #FF7F01;
+}
+
+.footerContainer {
+    color: grey;
+}
+
+/*-------------------- ⇧ footer ⇧ ----------------------------------------------*/
