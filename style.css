@@ -316,20 +316,35 @@ h2 {
     margin-right: 2.7rem;
 }
 
+.info-container-section{
+    display: flex;
+    align-items: center;
+}
+
+.info-container-section img{
+    width: 1.8rem;
+    height: 1.8rem;
+    object-fit: contain;
+    background-color: whitesmoke;
+    border-radius: 100%;
+    padding: 7px;
+    
+}
+
 .info-container-selection {
     margin-left: 5rem;
     margin-top: 2rem;
-    margin-right: 3.7rem;
+    margin-right: -2.6rem;
     overflow: auto;
     column-gap: 24px;
     display: flex;
     align-items: center;
     
     white-space: nowrap;
+}
 
-
-
-
+.info-container-selection-category{
+    display: flex;
 }
 
 .info-container-selection img {
@@ -387,9 +402,10 @@ h2 {
 }
 
 .scrollArrow {
-    position: fixed;
-    right: 12.8rem;
-    z-index: 1;
+    cursor: pointer;
+    margin-left: 5rem;
+    margin-right: 0.5rem;
+    margin-top: 2rem;
 }
 
 .product-container{
