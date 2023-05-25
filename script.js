@@ -21,16 +21,12 @@ function render() {
                     <img class="image" src="${dish.image}">
                     
                     <div class="middle">
-                        <div class="text">Hinzufügen</div>
+                        <div><button class="add-product-button">Hinzufügen</button></div>
                     </div>
                 </div>
                 
-                
-
                 <h3>${dish['description']}</h3>
                 <h2>${dish['price']}</h2>
-
-       
             </div>
         `;
     }

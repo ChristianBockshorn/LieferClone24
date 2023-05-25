@@ -324,6 +324,7 @@ h2 {
 .info-container-section {
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 .info-container-section img {
@@ -377,6 +378,7 @@ h2 {
 .info-container-selection-category a:hover {
     background-color: #FF7F01;
     border-radius: 10px;
+    padding: 8px;
 
 }
 
@@ -474,12 +476,13 @@ h2 {
     opacity: 1;
 }
 
-.text {
-    background-color: #4CAF50;
+.add-product-button {
+    background-color: #FF7F01;
     color: white;
     font-size: 16px;
     padding: 16px 32px;
     border-radius: 1rem;
+    cursor: pointer;
 }
 
 
