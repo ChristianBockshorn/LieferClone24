@@ -1,3 +1,10 @@
+let basketDishName = [];
+let basketPrices = [];
+
+
+
+
+
 function render() {
     let content = document.getElementById('content'); //div container wird verknüpft mit der id 'content' d.h: wir haben eine variable wo unser div-container drin ist
     content.innerHTML = '';
@@ -21,7 +28,7 @@ function render() {
                     <img class="image" src="${dish.image}">
                     
                     <div class="middle">
-                        <div><button class="add-product-button">Hinzufügen</button></div>
+                        <div><button onclick="addToBasket(name,price)" class="add-product-button">Hinzufügen</button></div>
                     </div>
                 </div>
                 
@@ -32,7 +39,10 @@ function render() {
     }
 }
 
-
+function addToBasket(name, price) {
+    basketDishName.push(menuName);
+    basketPrices.push(price);
+}
 
 
 
