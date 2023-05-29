@@ -269,7 +269,7 @@ header {
 
 .info-container-header-icon img:hover {
     background-color: #FF7F01;
-    border-radius: 10px;
+    
 }
 
 h2 {
@@ -278,10 +278,13 @@ h2 {
 }
 
 .info-container-header-icon img {
-    width: 1.8rem;
+    width: 1.7rem;
     height: 1.8rem;
     object-fit: contain;
     cursor: pointer;
+    background-color: whitesmoke;
+    border-radius: 100%;
+    padding: 7px;
 }
 
 .info-container-review {
@@ -487,17 +490,37 @@ h2 {
 
 
 
-
-
+/*-------------------  ⇩ Aside ⇩ --------------------------------------*/
 
 aside {
-
     padding: 3rem;
     box-shadow: -1px 0px 7px -2px var(--headerImgHover);
     display: flex;
     justify-content: center;
     position: relative;
 }
+
+.empty-shopping-cart-container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.empty-shopping-cart{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 4rem;
+    gap: 1rem;
+}
+
+.empty-shopping-cart img{
+    height: 6rem;
+    object-fit: contain;
+}
+
+/*-------------------- ⇧ Aside ⇧ --------------------------------------*/
 
 /*-------------------- ⇧ Main ⇧ ----------------------------------------------*/
 
