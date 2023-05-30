@@ -13,6 +13,8 @@ body {
 
 
 
+
+
 /*------------------- ⇩ Header ⇩-------------------------------------------------------------------------*/
 
 
@@ -111,9 +113,7 @@ header {
     border-radius: 5px;
 }
 
-.d-none {
-    display: none;
-}
+
 
 .popupbtn {
     color: white;
@@ -500,13 +500,13 @@ aside {
     position: relative;
 }
 
-.empty-shopping-cart-container{
+.shopping-card-container{
     display: flex;
     align-items: center;
     flex-direction: column;
 }
 
-.empty-shopping-cart{
+.empty-shopping-card{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -515,7 +515,7 @@ aside {
     gap: 1rem;
 }
 
-.empty-shopping-cart img{
+.empty-shopping-card img{
     height: 6rem;
     object-fit: contain;
 }
@@ -565,3 +565,8 @@ aside {
 }
 
 /*-------------------- ⇧ footer ⇧ ----------------------------------------------*/
+
+
+.d-none {
+    display: none;
+}

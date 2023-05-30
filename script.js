@@ -1,3 +1,5 @@
+let basketCardTemplate = [];
+
 let basketDishName = [];
 let basketPrices = [];
 
@@ -17,7 +19,7 @@ function render() {
 
 
     for (let i = 0; i < dishes.length; i++) {
-        const dish = dishes[i];
+        let dish = dishes[i];
 
         content.innerHTML += `
         <h2>${dish['category']}</h2>
@@ -28,7 +30,7 @@ function render() {
                     <img class="image" src="${dish.image}">
                     
                     <div class="middle">
-                        <div><button onclick="addToBasket(name,price)" class="add-product-button">Hinzufügen</button></div>
+                        <div><button onclick="renderBasketCard()" class="add-product-button">Hinzufügen</button></div>
                     </div>
                 </div>
                 
@@ -37,14 +39,62 @@ function render() {
             </div>
         `;
     }
+    
 }
 
-function addToBasket(name, price) {
-    basketDishName.push(menuName);
-    basketPrices.push(price);
+function renderBasketCard() {
+    let fullShoppingCard = document.getElementById('fullShoppingCard');
+    fullShoppingCard = '';
+
+    fullBasket();
+
+    for (let b = 0; b < basketCardTemplate.length; b++) {
+        
+        fullShoppingCard.innerHTML +=`
+        <div id="fullShoppingCard" class="d-none">
+            <div id="orderContainer">
+                <div class="order-menu">
+                    <div class="order-menu-name">
+                        <h2>${dish['menuName']}</h2>          
+                    </div>
+
+                    <div class="order-menu-price">
+
+                    </div>
+                </div>
+
+                <div class="order-add-reduce">
+
+                </div>
+
+
+
+
+            </div>
+
+        </div>
+        `;
+        
+    }
+
 }
 
 
+
+// function addToBasket(name, price) {
+//     basketDishName.push(menuName);
+//     basketPrices.push(price);
+// }
+
+function fullBasket() {
+    document.getElementById('emptyShoppingCard').classList.add('d-none');
+    document.getElementById('fullShoppingCard').classList.remove('d-none');
+}
+
+function emptyBasket() {
+    document.getElementById('emptyShoppingCard').classList.remove('d-none');
+    document.getElementById('fullShoppingCard').classList.add('d-none');
+}
 
 
 // function openHeaderMenuMore() {
