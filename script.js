@@ -46,11 +46,12 @@ function renderBasketCard() {
     let fullShoppingCard = document.getElementById('fullShoppingCard');
     fullShoppingCard = '';
 
-    fullBasket();
+    
 
     for (let b = 0; b < basketCardTemplate.length; b++) {
         
         fullShoppingCard.innerHTML +=`
+        test
         <div id="fullShoppingCard" class="d-none">
             <div id="orderContainer">
                 <div class="order-menu">
@@ -76,7 +77,7 @@ function renderBasketCard() {
         `;
         
     }
-
+    fullBasket();
 }
 
 
