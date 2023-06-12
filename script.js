@@ -23,7 +23,7 @@ function render() {
                     <img class="image" src="${dish.image}">
                     
                     <div class="middle">
-                        <div><button onclick="addMenu(${i})" class="add-product-button">Hinzufügen</button></div>
+                        <div><button onclick="addMenu()" class="add-product-button">Hinzufügen</button></div>
                     </div>
                 </div>
                 
