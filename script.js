@@ -4,9 +4,6 @@ let basketDishName = [];
 let basketPrices = [];
 
 
-
-
-
 function render() {
     let content = document.getElementById('content'); //div container wird verknüpft mit der id 'content' d.h: wir haben eine variable wo unser div-container drin ist
     content.innerHTML = '';
@@ -23,7 +20,7 @@ function render() {
                     <img class="image" src="${dish.image}">
                     
                     <div class="middle">
-                        <div><button onclick="addMenu()" class="add-product-button">Hinzufügen</button></div>
+                        <div><button onclick="addMenu('${dish['menuName']}','${dish['price']}')" class="add-product-button">Hinzufügen</button></div>
                     </div>
                 </div>
                 
@@ -38,44 +35,46 @@ function render() {
 
 function addMenu(menuName, price) {
     let index = dishes.indexOf(menuName);
-    let food = dishes.menuName
 
-        
 
-    render();
+    basketDishName.push(menuName);
+    basketPrices.push(price);
+
+
+
     renderBasketCard();
+
+
 }
 
 function renderBasketCard() {
-    let fullShoppingCard = document.getElementById('fullShoppingCard');
-    fullShoppingCard = '';
+    let basketMain = document.getElementById('basketMain');
 
-
-
-    for (let b = 0; b < basketCardTemplate.length; b++) {
-
-        let item = dishes.menuName;
-
-
-        fullShoppingCard.innerHTML += `
+    for (let b = 0; b < basketDishName.length; b++) {
+        let item = basketDishName[b];
+        let price = basketPrices[b];
+        basketMain.innerHTML += `
         
-        <div id="fullShoppingCard">
-            <div id="orderContainer">
-                <div class="order-menu">
-                    <div class="order-menu-name">
-                        <h2>${dish['menuName']}</h2>          
-                    </div>
-
-                    <div class="order-menu-price">
-
-                    </div>
+        
+        <div id="orderContainer">        
+            <div class="order-menu">
+                    
+                <div class="order-menu-name">
+                    <h3>${item}</h3>          
                 </div>
 
-                <div class="order-add-reduce">
-
+                <div class="order-menu-price">
+                    <p>${price}</p> 
                 </div>
             </div>
+
+            <div class="order-add-reduce">
+                <img src="icon/add.png">
+                <img src="icon/reduce.png">
+
+            </div>
         </div>
+        
         `;
 
     }

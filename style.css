@@ -520,6 +520,70 @@ aside {
     object-fit: contain;
 }
 
+.basket-header {
+    display: flex;
+    justify-content: center;
+}
+
+.orderContainer{
+    display: flex;
+    flex-direction: column;
+}
+
+.order-menu{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    width: 190px;
+    
+}
+
+.order-add-reduce{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    
+}
+
+.order-add-reduce img:hover {
+    background-color: #FF7F01;
+    border-radius: 100%;
+    cursor: pointer;
+    
+    
+    
+}
+
+.basket-pay-button-container{
+    display: flex;
+    justify-content: center;
+}
+
+.basket-pay-button{
+    padding: 8px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: x-large;
+    
+}
+
+.basket-pay-button:hover {
+    background-color: #FF7F01;
+}
+
+.basket-costs-subtotal,
+.basket-costs-delivery,
+.basket-costs-total {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+
+
 /*-------------------- ⇧ Aside ⇧ --------------------------------------*/
 
 /*-------------------- ⇧ Main ⇧ ----------------------------------------------*/
