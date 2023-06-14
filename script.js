@@ -49,14 +49,15 @@ function addMenu(menuName, price) {
 
 function renderBasketCard() {
     let basketMain = document.getElementById('basketMain');
-
+    basketMain.innerHTML = '';
+    
     for (let b = 0; b < basketDishName.length; b++) {
         let item = basketDishName[b];
         let price = basketPrices[b];
         basketMain.innerHTML += `
         
         
-        <div id="orderContainer">        
+        <div id="orderContainer(${b})">        
             <div class="order-menu">
                     
                 <div class="order-menu-name">
@@ -78,6 +79,23 @@ function renderBasketCard() {
         `;
 
     }
+    document.getElementById('basket-costs-container').innerHTML+=`
+        <div class="basket-costs-subtotal">
+            <p>Zwischensumme</p><p>xx</p>
+        </div>
+        <div class="basket-costs-delivery">
+            <p>Lieferkosten</p><p>2.00 €</p>
+        </div>
+        <div class="basket-costs-total">
+            <p>Gesamt</p><p>XX</p>
+        </div>
+
+        <div class="basket-pay-button-container">
+            <button class="basket-pay-button">Bezahlen</button>
+        </div>
+    `;
+
+
     fullBasket();
 }
 
