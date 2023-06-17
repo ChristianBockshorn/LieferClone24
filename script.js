@@ -50,12 +50,11 @@ function addMenu(menuName, price) {
 function renderBasketCard() {
     let basketMain = document.getElementById('basketMain');
     basketMain.innerHTML = '';
-    
+
     for (let b = 0; b < basketDishName.length; b++) {
         let item = basketDishName[b];
         let price = basketPrices[b];
         basketMain.innerHTML += `
-        
         
         <div id="orderContainer(${b})">        
             <div class="order-menu">
@@ -79,27 +78,53 @@ function renderBasketCard() {
         `;
 
     }
-    document.getElementById('basket-costs-container').innerHTML+=`
-        <div class="basket-costs-subtotal">
-            <p>Zwischensumme</p><p>xx</p>
-        </div>
-        <div class="basket-costs-delivery">
-            <p>Lieferkosten</p><p>2.00 €</p>
-        </div>
-        <div class="basket-costs-total">
-            <p>Gesamt</p><p>XX</p>
-        </div>
 
-        <div class="basket-pay-button-container">
-            <button class="basket-pay-button">Bezahlen</button>
-        </div>
-    `;
+    for (let p = 0; p < basketDishName.length; p++) {
+        let price = basketPrices[p];
+        basketCostsContainer.innerHTML = '';
+
+        
+        
+
+        renderBasketPriceContainer(price);
+
+    }
+
+
+
 
 
     fullBasket();
 }
 
+function renderBasketPriceContainer(price) {
+    document.getElementById('basketCostsContainer').innerHTML += `
+    <div class="basket-costs-subtotal">
+        <p>Zwischensumme</p><p>${subTotal()}</p>
+    </div>
+    <div class="basket-costs-delivery">
+        <p>Lieferkosten</p><p>2,00 €</p>
+    </div>
+    <div class="basket-costs-total">
+        <p>Gesamt</p><p>${price}</p>
+    </div>
 
+    <div class="basket-pay-button-container">
+        <button class="basket-pay-button">Bezahlen</button>
+    </div>
+`;
+}
+
+function subTotal(){
+    let sum = 0;
+    for (let r = 0; r < basketPrices.length; r++) {
+        sum += basketPrices[r];
+        
+    }
+    return sum;
+    
+
+}
 
 // function addToBasket(name, price) {
 //     basketDishName.push(menuName);

@@ -4,7 +4,7 @@ let dishes = [
         'menuName': 'Pizza Margherita',
         'image': 'img/pizza/PizzaMargherita.jpg',
         'description': 'mit Tomatensauce, Käse',
-        'price': '9,40 €',
+        'price': 9.40,
 
     },
 
