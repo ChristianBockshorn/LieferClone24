@@ -4,7 +4,7 @@ let dishes = [
         'menuName': 'Pizza Margherita',
         'image': 'img/pizza/PizzaMargherita.jpg',
         'description': 'mit Tomatensauce, Käse',
-        'price': 9.40,
+        'price': 9.45,
 
     },
 
@@ -13,7 +13,7 @@ let dishes = [
         'menuName': 'Pizza Salami',
         'image': 'img/pizza/PizzaSalami.jpg',
         'description': 'mit Tomatensauce, Käse, Salami',
-        'price': '8,90 €',
+        'price': 8.95,
     },
 
     {
@@ -21,7 +21,7 @@ let dishes = [
         'menuName': 'Pizza Prosciutto',
         'image': 'img/pizza/PizzaProsciutto.jpg',
         'description': 'mit Tomatensauce, Käse, Formvorderschinken',
-        'price': '9,90 €',
+        'price': 9.95,
 
     },
 
@@ -30,6 +30,6 @@ let dishes = [
         'menuName': 'Pizza Salami',
         'image': 'img/pizza/PizzaSalami.jpg',
         'description': 'mit Tomatensauce, Käse',
-        'price': '8,90 €',
+        'price': 7.99,
     },
 ]
