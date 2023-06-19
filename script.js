@@ -10,6 +10,7 @@ function render() {
 
     for (let i = 0; i < dishes.length; i++) {
         let dish = dishes[i];
+        let amount = basketAmount[i];
 
         content.innerHTML += `
         <h2>${dish['category']}</h2>
@@ -20,7 +21,7 @@ function render() {
                     <img class="image" src="${dish.image}">
                     
                     <div class="middle">
-                        <div><button onclick="addMenu('${dish['menuName']}','${dish['price']}')" class="add-product-button">Hinzufügen</button></div>
+                        <div><button onclick="addMenu('${amount}','${dish['menuName']}','${dish['price']}')" class="add-product-button">Hinzufügen</button></div>
                     </div>
                 </div>
                 
@@ -29,19 +30,17 @@ function render() {
             </div>
         `;
     }
-
 }
 
 
-function addMenu(menuName, price) {
+function addMenu(amount,menuName, price) {
     let index = dishes.indexOf(menuName);
 
+    basketAmount.push(1);
     basketDishName.push(menuName);
     basketPrices.push(Number(price));
 
     renderBasketCard();
-
-
 }
 
 function renderBasketCard() {
@@ -52,17 +51,14 @@ function renderBasketCard() {
     for (let b = 0; b < basketDishName.length; b++) {
         let item = basketDishName[b];
         let price = basketPrices[b];
-
-
-
-        amount += basketAmount[b]++;
-        basketMain.innerHTML += `
+        let amount = basketAmount[b]++;
         
+        basketMain.innerHTML += `
         <div id="orderContainer(${b})">        
             <div class="order-menu">
                 
                 <div class="order-menu-amount">
-                    <h3>${amount[b]}</h3>          
+                    <h3>${amount}</h3>          
                 </div>
 
                 <div class="order-menu-name">
@@ -80,9 +76,7 @@ function renderBasketCard() {
 
             </div>
         </div>
-        
         `;
-
     }
 
     for (let p = 0; p < basketDishName.length; p++) {
@@ -90,21 +84,12 @@ function renderBasketCard() {
 
         basketCostsContainer.innerHTML = '';
 
-
-
-
         renderBasketPriceContainer(price);
-
     }
-
-
-
-
-
     fullBasket();
 }
 
-function renderBasketPriceContainer(price) {
+function renderBasketPriceContainer() {
     document.getElementById('basketCostsContainer').innerHTML += `
     <div class="basket-costs-subtotal">
         <p>Zwischensumme</p><p>${subTotal().toFixed(2)}€</p>
@@ -124,10 +109,9 @@ function renderBasketPriceContainer(price) {
 
 
 function addAmount(b) {
-    basketAmount[b]++;
-
-
+    basketAmount.item[b]++;
 }
+
 
 function subTotal() {
     let sum = 0;
@@ -137,23 +121,21 @@ function subTotal() {
     return sum;
 }
 
+
 function totalPrice() {
     let sum = 0;
-    for (let r = 0; r < basketPrices.length; r++) {
-        sum += basketPrices[r] + 2;
+    for (let t = 0; t < basketPrices.length; t++) {
+        sum += basketPrices[t] + 2;
     }
     return sum;
 }
 
-// function addToBasket(name, price) {
-//     basketDishName.push(menuName);
-//     basketPrices.push(price);
-// }
 
 function fullBasket() {
     document.getElementById('emptyShoppingCard').classList.add('d-none');
     document.getElementById('fullShoppingCard').classList.remove('d-none');
 }
+
 
 function emptyBasket() {
     document.getElementById('emptyShoppingCard').classList.remove('d-none');
@@ -172,24 +154,23 @@ function emptyBasket() {
 
 function openHeaderMenuMore() {
     document.getElementById('openHeaderMenuMoreBackground').classList.remove('d-none');
-
 }
+
 
 function closeHeaderMenuMore() {
     document.getElementById('openHeaderMenuMoreBackground').classList.add('d-none');
-
 }
+
 
 function doNotClose(event) {
     event.stopPropagation();
 }
 
+
 function scrollArrow() {
     const box = document.getElementById("box");
     box.scrollTo({
-
         left: 450,
         behavior: 'smooth'
     });
-
 }
