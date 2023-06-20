@@ -34,11 +34,15 @@ function render() {
 
 
 function addMenu(amount,menuName, price) {
-    let index = dishes.indexOf(menuName);
-
-    basketAmount.push(1);
-    basketDishName.push(menuName);
-    basketPrices.push(Number(price));
+    let index = basketDishName.indexOf(menuName);
+    if (index == -1) {
+        
+        basketDishName.push(menuName);
+        basketPrices.push(Number(price));
+        basketAmount.push(1);
+    } else {
+        basketAmount[index]++;
+    }
 
     renderBasketCard();
 }
@@ -46,13 +50,15 @@ function addMenu(amount,menuName, price) {
 function renderBasketCard() {
     let basketMain = document.getElementById('basketMain');
     basketMain.innerHTML = '';
-    let amount = 0;
+
 
     for (let b = 0; b < basketDishName.length; b++) {
+        
         let item = basketDishName[b];
         let price = basketPrices[b];
-        let amount = basketAmount[b]++;
+        let amount = basketAmount[b];
         
+
         basketMain.innerHTML += `
         <div id="orderContainer(${b})">        
             <div class="order-menu">
