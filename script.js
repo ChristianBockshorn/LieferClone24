@@ -77,8 +77,8 @@ function renderBasketCard() {
             </div>
 
             <div class="order-add-reduce">
-                <img src="icon/add.png">
-                <img src="icon/reduce.png">
+                <img onclick="addButton(${b})" src="icon/add.png">
+                <img onclick="deleteButton(${b})" src="icon/reduce.png">
 
             </div>
         </div>
@@ -114,8 +114,16 @@ function renderBasketPriceContainer() {
 }
 
 
-function addAmount(b) {
-    basketAmount.item[b]++;
+
+
+function addButton(b) {
+    basketAmount[b]++;
+    renderBasketCard();
+}
+
+function deleteButton(b) {
+    basketAmount[b]--;
+    renderBasketCard();
 }
 
 
