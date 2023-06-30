@@ -33,10 +33,10 @@ function render() {
 }
 
 
-function addMenu(amount,menuName, price) {
+function addMenu(amount, menuName, price) {
     let index = basketDishName.indexOf(menuName);
     if (index == -1) {
-        
+
         basketDishName.push(menuName);
         basketPrices.push(Number(price));
         basketAmount.push(1);
@@ -53,11 +53,11 @@ function renderBasketCard() {
 
 
     for (let b = 0; b < basketDishName.length; b++) {
-        
+
         let item = basketDishName[b];
         let price = basketPrices[b];
         let amount = basketAmount[b];
-        
+
 
         basketMain.innerHTML += `
         <div id="orderContainer(${b})">        
@@ -116,12 +116,13 @@ function renderBasketPriceContainer() {
 
 
 
-function addButton(b,basketPrices) {
+function addButton(b, basketPrices) {
     basketAmount[b]++;
-    
-    
+    let sum = 0;
+    sum += basketPrices[b] * basketAmount[b];
+
     renderBasketCard();
-    
+
 }
 
 function deleteButton(b) {
@@ -134,6 +135,7 @@ function subTotal() {
     let sum = 0;
     for (let r = 0; r < basketPrices.length; r++) {
         sum += basketPrices[r];
+        sum += basketPrices[r] * basketAmount[r];
     }
     return sum;
 }
@@ -143,6 +145,8 @@ function totalPrice() {
     let sum = 0;
     for (let t = 0; t < basketPrices.length; t++) {
         sum += basketPrices[t] + 2;
+        sum += basketPrices[t] * basketAmount[t];
+
     }
     return sum;
 }
