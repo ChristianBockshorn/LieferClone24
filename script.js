@@ -127,7 +127,13 @@ function addButton(b, basketPrices) {
 
 function deleteButton(b) {
     basketAmount[b]--;
+    if (basketAmount[b] == 0) {
+        basketDishName.splice(b, 1);
+        basketPrices.splice(b, 1);
+        basketAmount.splice(b, 1);
+    }
     renderBasketCard();
+    
 }
 
 
