@@ -131,16 +131,21 @@ function deleteButton(b) {
         basketDishName.splice(b, 1);
         basketPrices.splice(b, 1);
         basketAmount.splice(b, 1);
+
     }
-    renderBasketCard();
-    
+
+    if (basketAmount.length == 0) {
+        emptyBasket();
+    }
+
+
+
 }
 
 
 function subTotal() {
     let sum = 0;
     for (let r = 0; r < basketPrices.length; r++) {
-        sum += basketPrices[r];
         sum += basketPrices[r] * basketAmount[r];
     }
     return sum;
@@ -150,8 +155,7 @@ function subTotal() {
 function totalPrice() {
     let sum = 0;
     for (let t = 0; t < basketPrices.length; t++) {
-        sum += basketPrices[t] + 2;
-        sum += basketPrices[t] * basketAmount[t];
+        sum += basketPrices[t] * basketAmount[t] + 2;
 
     }
     return sum;
