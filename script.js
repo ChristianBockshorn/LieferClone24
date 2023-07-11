@@ -131,15 +131,12 @@ function deleteButton(b) {
         basketDishName.splice(b, 1);
         basketPrices.splice(b, 1);
         basketAmount.splice(b, 1);
-
     }
+    renderBasketCard();
 
     if (basketAmount.length == 0) {
         emptyBasket();
     }
-
-
-
 }
 
 
