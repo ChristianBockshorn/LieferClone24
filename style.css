@@ -354,7 +354,9 @@ h2 {
 
 .info-container-selection-category {
     display: flex;
-    overflow: auto;
+    overflow: scroll;
+    scroll-behavior: smooth;
+    padding: 10px;
 }
 
 .info-container-selection img {

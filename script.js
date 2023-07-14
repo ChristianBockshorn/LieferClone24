@@ -196,9 +196,10 @@ function doNotClose(event) {
 
 
 function scrollArrow() {
-    const box = document.getElementById("box");
-    box.scrollTo({
-        left: 450,
-        behavior: 'smooth'
-    });
+    let box = document.getElementById("box");
+    // box.scrollTo({
+    //     left: 450,
+    //     behavior: 'smooth'
+    // });
+    box.scrollLeft +=200;
 }
