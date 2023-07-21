@@ -491,7 +491,6 @@ h2 {
 
 aside {
     padding: 3rem;
-    box-shadow: -1px 0px 7px -2px var(--headerImgHover);
     display: flex;
     justify-content: center;
     position: relative;
@@ -501,6 +500,7 @@ aside {
     display: flex;
     align-items: center;
     flex-direction: column;
+    padding: 3rem;
 }
 
 .empty-shopping-card {
@@ -646,16 +646,20 @@ aside {
     }
 
 
-    .shopping-button {
+    #shopping-button {
         box-shadow: 2px 2px 2px 2px rgb(0 0 0 /20%);
         padding: 8px;
-        margin-bottom: 32px;
-        
+        margin-bottom: 3px;
         height: 20px;
         border-radius: 1rem;
         background-color: #FF7F01;
         text-align: center;
         cursor: pointer;
+        position: fixed;
+        width: 95%;
+        bottom: 0;
+        margin-left: 19px;
+
     }
 
     .shopping-button::after {
@@ -678,7 +682,7 @@ aside {
         margin-left: 7px;
     }
 
-    .info-container-selection{
+    .info-container-selection {
         margin-left: 7px;
     }
 }

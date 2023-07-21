@@ -11,25 +11,29 @@ function render() {
     for (let i = 0; i < dishes.length; i++) {
         let dish = dishes[i];
         let amount = basketAmount[i];
-
-        content.innerHTML += `
-        <h2>${dish['category']}</h2>
-            <div id="card(${i})" class="card">
-                <h2>${dish['menuName']}</h2>
-                
-                <div class="container">
-                    <img class="image" src="${dish.image}">
-                    
-                    <div class="middle">
-                        <div><button onclick="addMenu('${amount}','${dish['menuName']}','${dish['price']}')" class="add-product-button">Hinzufügen</button></div>
-                    </div>
-                </div>
-                
-                <h3>${dish['description']}</h3>
-                <h2>${dish['price']} €</h2>
-            </div>
-        `;
+        content.innerHTML += contentTemplate(i, dish, amount);
     }
+}
+
+
+function contentTemplate(i, dish, amount) {
+    return `
+    <h2>${dish['category']}</h2>
+        <div id="card(${i})" class="card">
+            <h2>${dish['menuName']}</h2>
+            
+            <div class="container">
+                <img class="image" src="${dish.image}">
+                
+                <div class="middle">
+                    <div><button onclick="addMenu('${amount}','${dish['menuName']}','${dish['price']}')" class="add-product-button">Hinzufügen</button></div>
+                </div>
+            </div>
+            
+            <h3>${dish['description']}</h3>
+            <h2>${dish['price']} €</h2>
+        </div>
+    `;
 }
 
 
@@ -47,56 +51,73 @@ function addMenu(amount, menuName, price) {
     renderBasketCard();
 }
 
+
 function renderBasketCard() {
     let basketMain = document.getElementById('basketMain');
     basketMain.innerHTML = '';
 
+    forBasketMain();
+    forBasketPrice();
 
+    fullBasket();
+}
+
+
+function forBasketMain() {
     for (let b = 0; b < basketDishName.length; b++) {
 
         let item = basketDishName[b];
         let price = basketPrices[b];
         let amount = basketAmount[b];
 
-
-        basketMain.innerHTML += `
-        <div id="orderContainer(${b})">        
-            <div class="order-menu">
-                
-                <div class="order-menu-amount">
-                    <h3>${amount}</h3>          
-                </div>
-
-                <div class="order-menu-name">
-                    <h3>${item}</h3>          
-                </div>
-
-                <div class="order-menu-price">
-                    <p>${price}€</p> 
-                </div>
-            </div>
-
-            <div class="order-add-reduce">
-                <img onclick="addButton(${b},${basketPrices[b]})" src="icon/add.png">
-                <img onclick="deleteButton(${b})" src="icon/reduce.png">
-
-            </div>
-        </div>
-        `;
+        basketMain.innerHTML += basketMainTemplate(b, item, price, amount);
     }
+}
 
+function forBasketPrice() {
     for (let p = 0; p < basketDishName.length; p++) {
         let price = basketPrices[p];
-
         basketCostsContainer.innerHTML = '';
 
         renderBasketPriceContainer(price);
     }
-    fullBasket();
 }
 
+function basketMainTemplate(b, item, price, amount) {
+    return `
+    <div id="orderContainer(${b})">        
+        <div class="order-menu">
+            
+            <div class="order-menu-amount">
+                <h3>${amount}</h3>          
+            </div>
+
+            <div class="order-menu-name">
+                <h3>${item}</h3>          
+            </div>
+
+            <div class="order-menu-price">
+                <p>${price}€</p> 
+            </div>
+        </div>
+
+        <div class="order-add-reduce">
+            <img onclick="addButton(${b},${basketPrices[b]})" src="icon/add.png">
+            <img onclick="deleteButton(${b})" src="icon/reduce.png">
+
+        </div> 
+    </div>
+    `;
+}
+
+
 function renderBasketPriceContainer() {
-    document.getElementById('basketCostsContainer').innerHTML += `
+    document.getElementById('basketCostsContainer').innerHTML += renderBasketPriceContainerTemplate();
+}
+
+
+function renderBasketPriceContainerTemplate() {
+    return `
     <div class="basket-costs-subtotal">
         <p>Zwischensumme</p><p>${subTotal().toFixed(2)}€</p>
     </div>
@@ -114,16 +135,14 @@ function renderBasketPriceContainer() {
 }
 
 
-
-
 function addButton(b, basketPrices) {
     basketAmount[b]++;
     let sum = 0;
     sum += basketPrices[b] * basketAmount[b];
 
     renderBasketCard();
-
 }
+
 
 function deleteButton(b) {
     basketAmount[b]--;
@@ -153,7 +172,6 @@ function totalPrice() {
     let sum = 0;
     for (let t = 0; t < basketPrices.length; t++) {
         sum += basketPrices[t] * basketAmount[t] + 2;
-
     }
     return sum;
 }
@@ -169,15 +187,6 @@ function emptyBasket() {
     document.getElementById('emptyShoppingCard').classList.remove('d-none');
     document.getElementById('fullShoppingCard').classList.add('d-none');
 }
-
-
-// function openHeaderMenuMore() {
-//     openHeaderMenuMoreBackground.style.display = 'flex';
-// }
-
-// function closeHeaderMenuMore() {
-//     openHeaderMenuMoreBackground.style.display = 'none';
-// }
 
 
 function openHeaderMenuMore() {
@@ -197,9 +206,5 @@ function doNotClose(event) {
 
 function scrollArrow() {
     let box = document.getElementById("box");
-    // box.scrollTo({
-    //     left: 450,
-    //     behavior: 'smooth'
-    // });
-    box.scrollLeft +=200;
+    box.scrollLeft += 200;
 }
