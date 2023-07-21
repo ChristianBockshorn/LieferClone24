@@ -26,7 +26,7 @@ function render() {
                 </div>
                 
                 <h3>${dish['description']}</h3>
-                <h2>${dish['price']}</h2>
+                <h2>${dish['price']} €</h2>
             </div>
         `;
     }

@@ -265,7 +265,7 @@ header {
 
 .info-container-header-icon img:hover {
     background-color: #FF7F01;
-    
+
 }
 
 h2 {
@@ -344,7 +344,7 @@ h2 {
     column-gap: 24px;
     display: flex;
     align-items: center;
-    
+
     white-space: nowrap;
 }
 
@@ -446,7 +446,7 @@ h2 {
 
 .container {
     position: relative;
-    
+
 }
 
 .icon {
@@ -469,7 +469,7 @@ h2 {
 
 .container:hover .image {
     opacity: 0.3;
-    
+
 }
 
 .container:hover .middle {
@@ -497,13 +497,13 @@ aside {
     position: relative;
 }
 
-.shopping-card-container{
+.shopping-card-container {
     display: flex;
     align-items: center;
     flex-direction: column;
 }
 
-.empty-shopping-card{
+.empty-shopping-card {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -512,7 +512,7 @@ aside {
     gap: 1rem;
 }
 
-.empty-shopping-card img{
+.empty-shopping-card img {
     height: 6rem;
     object-fit: contain;
 }
@@ -522,48 +522,48 @@ aside {
     justify-content: center;
 }
 
-.orderContainer{
+.orderContainer {
     display: flex;
     flex-direction: column;
 }
 
-.order-menu{
+.order-menu {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    
+
     width: 190px;
-    
+
 }
 
-.order-add-reduce{
+.order-add-reduce {
     display: flex;
     justify-content: center;
     gap: 10px;
-    
+
 }
 
 .order-add-reduce img:hover {
     background-color: #FF7F01;
     border-radius: 100%;
     cursor: pointer;
-    
-    
-    
+
+
+
 }
 
-.basket-pay-button-container{
+.basket-pay-button-container {
     display: flex;
     justify-content: center;
 }
 
-.basket-pay-button{
+.basket-pay-button {
     padding: 8px;
     border: none;
     border-radius: 10px;
     cursor: pointer;
     font-size: x-large;
-    
+
 }
 
 .basket-pay-button:hover {
@@ -627,7 +627,61 @@ aside {
 
 /*-------------------- ⇧ footer ⇧ ----------------------------------------------*/
 
-
 .d-none {
     display: none;
 }
+
+
+/*-------------------  ⇩ Mobile ⇩ ----------------------------------------------*/
+
+@media screen and (min-width: 1001px) and (max-width: 3000px) {
+    #my-content {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 0px) and (max-width: 1000px) {
+    .hide-mobile {
+        display: none;
+    }
+
+
+    .shopping-button {
+        box-shadow: 2px 2px 2px 2px rgb(0 0 0 /20%);
+        padding: 8px;
+        margin-bottom: 32px;
+        
+        height: 20px;
+        border-radius: 1rem;
+        background-color: #FF7F01;
+        text-align: center;
+        cursor: pointer;
+    }
+
+    .shopping-button::after {
+        content: "Warenkorb";
+    }
+
+    .product-container {
+        margin-left: 7px;
+    }
+
+    .info-container-header {
+        margin-left: 7px;
+    }
+
+    .info-container-review {
+        margin-left: 7px;
+    }
+
+    .info-container-delivery-details {
+        margin-left: 7px;
+    }
+
+    .info-container-selection{
+        margin-left: 7px;
+    }
+}
+
+
+/*-------------------- ⇧ Mobile ⇧ ----------------------------------------------*/
